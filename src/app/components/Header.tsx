@@ -9,8 +9,8 @@ export default function Header() {
         <Image
           src={housemates}
           alt="Housemates Logo"
-          width="249"
-          height="49"
+          width={249}
+          height={49}
           className="w-auto h-12"
         />
         <span>Blog</span>

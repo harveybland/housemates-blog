@@ -21,3 +21,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.page-container {
+  @apply max-w-screen-lg m-auto py-10 px-5;
+}
+
