@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { Poppins } from "next/font/google";
+import Header from "./components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  style: "normal",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Housemates Blog",
@@ -16,7 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <header>
+          <Header />
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
