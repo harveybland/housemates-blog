@@ -47,3 +47,11 @@ export interface CompanyProps {
     catchPhrase: string,
     bs: string
 }   
+
+// Comment interface
+export interface CommentProps {
+    id?: number,
+    name: string,
+    email: string,
+    body: string
+}

@@ -1,4 +1,6 @@
+import CommentCard from "@/app/components/CommentCard";
 import PostCard from "@/app/components/PostCard";
+import { CommentProps } from "../../../../types/types";
 
 export default async function Post({
   params,
@@ -18,6 +20,12 @@ export default async function Post({
     `https://jsonplaceholder.typicode.com/users/${post.userId}`
   );
   const user = await reponse2.json();
+
+  // Comments data
+  const reponse3 = await fetch(
+    `https://jsonplaceholder.typicode.com/comments?postId=${params.id}`
+  );
+  const comments = await reponse3.json();
 
   return (
     <div>
@@ -40,6 +48,20 @@ export default async function Post({
                 user={user}
               />
             </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {comments && (
+          <div>
+            {comments.map((comment: CommentProps) => (
+              <CommentCard
+                key={comment.id}
+                name={comment.name}
+                body={comment.body}
+                email={comment.email}
+              />
+            ))}
           </div>
         )}
       </div>
