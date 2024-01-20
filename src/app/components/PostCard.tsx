@@ -18,7 +18,7 @@ export default function PostCard({
     >
       <div className="flex items-center gap-1 hover:underline">
         <Image src={avatar} alt="avatar" width={23} height={23} />
-        <span>Author: {user?.name}</span>
+        <span>{user?.name}</span>
       </div>
       <div>
         <h1 className="font-semibold mb-1">{title}</h1>
