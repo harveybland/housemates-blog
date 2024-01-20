@@ -7,8 +7,13 @@ export default function PostCard({ id, title, userId, body }: PostProps) {
       href={`/post/${id}`}
       className="block border border-b-2 mb-3 p-3 rounded"
     >
-      <h1>{title}</h1>
+      <span>Author: {userId}</span>
+      <h1 className="font-semibold">{title}</h1>
       <p>{body}</p>
+      <div>
+        <span>min read </span>
+        <span>Comments: </span>
+      </div>
     </Link>
   );
 }

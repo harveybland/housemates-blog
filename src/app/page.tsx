@@ -6,17 +6,19 @@ export default async function Home() {
   const postsJson = await posts.json();
 
   return (
-    <main className="page-container">
-      {postsJson.map((post: PostProps) => (
-        <div key={post.id}>
-          <PostCard
-            id={post.id}
-            userId={post.userId}
-            title={post.title}
-            body={post.body}
-          />
-        </div>
-      ))}
-    </main>
+    <div className="page-container">
+      <div className="animate-pop-in">
+        {postsJson.map((post: PostProps) => (
+          <div key={post.id}>
+            <PostCard
+              id={post.id}
+              userId={post.userId}
+              title={post.title}
+              body={post.body}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
