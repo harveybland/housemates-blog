@@ -1,0 +1,81 @@
+/* header blog text */
+.header-logo {
+    clip-path: polygon(2% 22%, 84% 0, 100% 100%, 0 99%, 7% 48%);
+    background-color: #018369;
+    height: 40px;
+    width: 50px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #fff;
+    margin-top: -5px;
+    p {
+        margin-top: 4px;
+    }
+}
+
+// Loading bar
+.loadingBar {
+    position: fixed;
+    top: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #018369; /* Adjust the color as needed */
+    animation: loadingAnimation 1.5s linear infinite;
+  }
+  
+  @keyframes loadingAnimation {
+    0% {
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+    100% {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
+  }
+
+.blog-cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1.5rem;
+}
+    
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+.blog-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+.blog-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+/* post card component animation */
+.animate-pop-in > * {
+    transform-origin: center;
+    opacity: 0;
+}
+
+@keyframes pop-in {
+0% {
+    transform: scaleX(1.2);
+    opacity: 0;
+}
+50% {
+    opacity: 0;
+}
+100% {
+    transform: scale(1);
+    opacity: 1;
+}
+}
+
+.animate-pop-in > * {
+animation: 0.4s ease-out 0.05s 1 pop-in;
+animation-fill-mode: forwards;
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "../styles/styles.scss";
 import { Poppins } from "next/font/google";
 import Header from "./components/Header";
 
@@ -11,7 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Housemates Blog",
-  description: "A blog about housemates",
+  description:
+    "Explore insightful articles and stories about harmonious living, shared experiences, and the joys and challenges of having housemates. From practical tips to heartwarming anecdotes, dive into a community-centered blog that celebrates the essence of living together.",
 };
 
 export default function RootLayout({
@@ -25,7 +27,7 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main className="page-container">{children}</main>
+        <main className="gradient-bg">{children}</main>
       </body>
     </html>
   );

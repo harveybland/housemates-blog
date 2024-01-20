@@ -10,9 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         'brand-charcoal': '#121212',
+        'brand-space': '#6B6B6B',
         'brand-pistachio': '#ef4db5',
         'brand-leaf': '#018369',
-        'brand-sea': '#c5ff8',
+        'brand-sea': '#c5fff8',
       },
     },
   },

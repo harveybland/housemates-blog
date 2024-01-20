@@ -13,7 +13,9 @@ export default function Header() {
           height={49}
           className="w-auto h-12"
         />
-        <span>Blog</span>
+        <span className="header-logo">
+          <p>Blog</p>
+        </span>
       </Link>
     </div>
   );

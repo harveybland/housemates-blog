@@ -28,46 +28,52 @@ export default async function Post({
   const comments = await reponse3.json();
 
   return (
-    <div>
-      <div>
-        {user && (
-          <div>
-            <div key={user.id}>{user.name}</div>
-          </div>
-        )}
-      </div>
-      <div>
-        {post && (
-          <div className="animate-pop-in">
-            <div key={post.id}>
-              <PostCard
-                id={post.id}
-                title={post.title}
-                body={post.body}
-                NumbOfComments={post.NumbOfComments}
-                user={user}
-              />
+    <>
+      <div className="page-container">
+        <div>
+          {user && (
+            <div>
+              <div key={user.id}>{user.name}</div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        <div>
+          {post && (
+            <div className="animate-pop-in">
+              <div key={post.id}>
+                <PostCard
+                  id={post.id}
+                  title={post.title}
+                  body={post.body}
+                  NumbOfComments={post.NumbOfComments}
+                  user={user}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+        <div>
+          {comments && (
+            <div>
+              {comments.map((comment: CommentProps) => (
+                <CommentCard
+                  key={comment.id}
+                  name={comment.name}
+                  body={comment.body}
+                  email={comment.email}
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-      <div>
-        {comments && (
-          <div>
-            {comments.map((comment: CommentProps) => (
-              <CommentCard
-                key={comment.id}
-                name={comment.name}
-                body={comment.body}
-                email={comment.email}
-              />
-            ))}
-          </div>
-        )}
+      <div className="bg-brand-leaf">
+        <div className="page-container">
+          <h1 className="text-2xl font-semibold text-white">
+            More posts from {user.name}
+          </h1>
+        </div>
       </div>
-      <div>
-        <h1>More posts from {user.name}</h1>
-      </div>
-    </div>
+    </>
   );
 }

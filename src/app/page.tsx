@@ -7,10 +7,14 @@ import PostCard from "./components/PostCard";
 
 export default function Home() {
   const [posts, setPosts] = useState<PostProps[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   async function getPosts() {
     const response: PostResponseProps[] = await postsData();
     setPosts(response);
+    if (response) {
+      setIsLoading(false);
+    }
   }
 
   useEffect(() => {
@@ -18,22 +22,25 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      {posts.length > 0 && (
-        <div className="animate-pop-in">
-          {posts.map((post: PostProps) => (
-            <div key={post.id}>
-              <PostCard
-                id={post.id}
-                title={post.title}
-                body={post.body}
-                NumbOfComments={post.NumbOfComments}
-                user={post.user}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="page-container relative">
+      {isLoading && <div className="loadingBar"></div>}
+      <div>
+        {posts.length > 0 && (
+          <div className="blog-cards animate-pop-in">
+            {posts.map((post: PostProps) => (
+              <div key={post.id}>
+                <PostCard
+                  id={post.id}
+                  title={post.title}
+                  body={post.body}
+                  NumbOfComments={post.NumbOfComments}
+                  user={post.user}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

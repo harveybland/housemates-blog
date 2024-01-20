@@ -25,30 +25,10 @@ body {
 
 /* page style container */
 .page-container {
-  @apply max-w-screen-lg m-auto py-10 px-5;
+  @apply max-w-screen-xl m-auto py-10 px-5;
 }
 
-/* post card component animation */
-.animate-pop-in > * {
-  transform-origin: center;
-  opacity: 0;
-}
-
-@keyframes pop-in {
-  0% {
-    transform: scaleX(1.2);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.animate-pop-in > * {
-  animation: 0.4s ease-out 0.05s 1 pop-in;
-  animation-fill-mode: forwards;
+/* gradient page background */
+.gradient-bg {
+  background: linear-gradient(180deg, rgba(1,131,105,.3) 10%, hsla(0,0%,100%,.4));
 }
