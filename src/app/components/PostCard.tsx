@@ -7,7 +7,7 @@ export default function PostCard({ id, title, body, user }: PostProps) {
       href={`/post/${id}`}
       className="flex gap-1 flex-col border border-b-2 mb-3 p-3 rounded"
     >
-      <span>Author: {user.name}</span>
+      <span>Author: {user?.name}</span>
       <div>
         <h1 className="font-semibold">{title}</h1>
         <p>{body}</p>

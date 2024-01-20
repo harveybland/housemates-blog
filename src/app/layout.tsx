@@ -25,7 +25,7 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main>{children}</main>
+        <main className="page-container">{children}</main>
       </body>
     </html>
   );

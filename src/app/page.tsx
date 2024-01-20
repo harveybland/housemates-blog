@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="page-container">
+    <div>
       {posts.length > 0 && (
         <div className="animate-pop-in">
           {posts.map((post: PostProps) => (
