@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { postsData } from "../../lib/api";
-import { PostProps } from "../../types/types";
+import { PostProps, PostResponseProps } from "../../types/types";
 import PostCard from "./components/PostCard";
 
 export default function Home() {
   const [posts, setPosts] = useState<PostProps[]>([]);
 
   async function getPosts() {
-    const response: PostProps[] = await postsData();
+    const response: PostResponseProps[] = await postsData();
     setPosts(response);
   }
 
@@ -28,7 +28,7 @@ export default function Home() {
                 title={post.title}
                 body={post.body}
                 NumbOfComments={post.NumbOfComments}
-                name={post.user.name}
+                user={post.user}
               />
             </div>
           ))}

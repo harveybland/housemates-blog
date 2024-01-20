@@ -14,7 +14,7 @@ export interface PostProps {
     title: string,
     body: string,
     NumbOfComments: number,
-    name: string,
+    user: UserProps
 }
 
 // User interface

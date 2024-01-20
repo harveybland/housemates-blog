@@ -9,7 +9,6 @@ export async function postsData(): Promise<PostResponseProps[]> {
     }
 
     const json: PostResponseProps[] = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.error('Error fetching data:', error);
