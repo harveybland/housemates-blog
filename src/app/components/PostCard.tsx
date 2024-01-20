@@ -10,9 +10,9 @@ export default function PostCard({ id, title, userId, body }: PostProps) {
       <span>Author: {userId}</span>
       <h1 className="font-semibold">{title}</h1>
       <p>{body}</p>
-      <div>
+      <div className="flex gap-4">
         <span>min read </span>
-        <span>Comments: </span>
+        <span>5 Comments</span>
       </div>
     </Link>
   );
