@@ -16,7 +16,7 @@ export async function GET() {
                 const commentsResp = await fetch(`${url}/posts/${post.id}/comments`);
                 const comments = await commentsResp.json();
 
-                return { ...post, user, commentsLength: comments.length };
+                return { ...post, user, NumbOfComments: comments.length };
             })
         );
 

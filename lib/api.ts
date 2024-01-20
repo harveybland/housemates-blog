@@ -1,6 +1,6 @@
-// import { EmailLookupResponse } from 'types/types';
+import { PostResponseProps } from "../types/types";
 
-export async function postsData(): Promise<any> {
+export async function postsData(): Promise<PostResponseProps[]> {
   try {
     const response = await fetch('/api/posts');
 
@@ -8,8 +8,7 @@ export async function postsData(): Promise<any> {
       throw new Error(`Error: ${response.status} - ${response.statusText}`);
     }
 
-    
-    const json: any = await response.json();
+    const json: PostResponseProps[] = await response.json();
     console.log(json);
     return json;
   } catch (error) {

@@ -6,10 +6,10 @@ import { PostProps } from "../../types/types";
 import PostCard from "./components/PostCard";
 
 export default function Home() {
-  const [postsResponse, setPosts] = useState<PostProps[]>([]);
+  const [posts, setPosts] = useState<PostProps[]>([]);
 
   async function getPosts() {
-    const response = await postsData();
+    const response: PostProps[] = await postsData();
     setPosts(response);
   }
 
@@ -19,15 +19,16 @@ export default function Home() {
 
   return (
     <div className="page-container">
-      {postsResponse.length > 0 && (
-        <div>
-          {postsResponse.map((post: PostProps) => (
+      {posts.length > 0 && (
+        <div className="animate-pop-in">
+          {posts.map((post: PostProps) => (
             <div key={post.id}>
               <PostCard
                 id={post.id}
-                userId={post.userId}
                 title={post.title}
                 body={post.body}
+                NumbOfComments={post.NumbOfComments}
+                name={post.user.name}
               />
             </div>
           ))}
