@@ -43,7 +43,7 @@ export default function Home() {
         <div>
           <input
             type="text"
-            className="border border-brand-charcoal rounded p-2 w-72 focus:brand-leaf focus:border-brand-leaf focus:outline-none"
+            className="border border-brand-space rounded p-2 w-72 focus:brand-leaf focus:border-brand-leaf focus:outline-none"
             placeholder="Search Author"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
