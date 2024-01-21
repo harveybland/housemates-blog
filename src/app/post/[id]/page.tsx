@@ -2,6 +2,7 @@ import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
 import { CommentProps } from "../../../../types/types";
 import UserCard from "@/app/components/cards/UserCard";
+import RevealOnScroll from "@/app/components/RevealOnScroll";
 
 export default async function Post({
   params,
@@ -81,6 +82,9 @@ export default async function Post({
             More posts from {user.name}
           </h2>
         </div>
+      </div>
+      <div>
+        <RevealOnScroll name={user.name} postTitle={post.title} />
       </div>
     </>
   );
