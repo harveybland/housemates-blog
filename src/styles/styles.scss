@@ -24,18 +24,18 @@
     width: 100%;
     background-color: #018369; /* Adjust the color as needed */
     animation: loadingAnimation 1.5s linear infinite;
-  }
+}
   
-  @keyframes loadingAnimation {
+@keyframes loadingAnimation {
     0% {
-      transform: scaleX(0);
-      transform-origin: left;
+        transform: scaleX(0);
+        transform-origin: left;
     }
     100% {
-      transform: scaleX(1);
-      transform-origin: right;
+        transform: scaleX(1);
+        transform-origin: right;
     }
-  }
+}
 
 .blog-cards {
     max-width: 1200px;
@@ -44,14 +44,14 @@
     gap: 1.5rem;
 }
     
-/* Screen larger than 600px? 2 column */
+/* Screen larger than 600px 2 column */
 @media (min-width: 600px) {
-.blog-cards { grid-template-columns: repeat(2, 1fr); }
+    .blog-cards { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Screen larger than 900px? 3 columns */
+/* Screen larger than 900px 3 columns */
 @media (min-width: 900px) {
-.blog-cards { grid-template-columns: repeat(3, 1fr); }
+    .blog-cards { grid-template-columns: repeat(3, 1fr); }
 }
 
 
@@ -62,20 +62,20 @@
 }
 
 @keyframes pop-in {
-0% {
-    transform: scaleX(1.2);
-    opacity: 0;
-}
-50% {
-    opacity: 0;
-}
-100% {
-    transform: scale(1);
-    opacity: 1;
-}
+    0% {
+        transform: scaleX(1.2);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .animate-pop-in > * {
-animation: 0.4s ease-out 0.05s 1 pop-in;
-animation-fill-mode: forwards;
+    animation: 0.4s ease-out 0.05s 1 pop-in;
+    animation-fill-mode: forwards;
 }
