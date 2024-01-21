@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { postsData } from "../../lib/api";
 import { PostProps, PostResponseProps } from "../../types/types";
 import PostCard from "./components/PostCard";
+import ViewToggleButton from "./components/buttons/ViewToggleButton";
 
 export default function Home() {
   const [posts, setPosts] = useState<PostProps[]>([]);
@@ -48,20 +49,16 @@ export default function Home() {
           />
         </div>
         <div className="flex gap-2">
-          <button
-            type="button"
-            className={`button-primary ${isGrid && "!bg-brand-leaf"}`}
+          <ViewToggleButton
+            isGrid={isGrid}
             onClick={() => setIsGrid(true)}
-          >
-            Grid view
-          </button>
-          <button
-            type="button"
-            className={`button-primary ${!isGrid && "!bg-brand-leaf"}`}
+            label="Grid view"
+          />
+          <ViewToggleButton
+            isGrid={!isGrid}
             onClick={() => setIsGrid(false)}
-          >
-            List view
-          </button>
+            label="List view"
+          />
         </div>
       </div>
       <div>
