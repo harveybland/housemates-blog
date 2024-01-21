@@ -34,5 +34,6 @@ body {
 
 /* gradient page background */
 .gradient-bg {
-  background: linear-gradient(180deg, rgba(1,131,105,.2) 10%, hsla(0,0%,100%,.4));
+  /* background: linear-gradient(180deg, rgba(1,131,105,.14) 10%, hsla(0,0%,100%,.4)); */
+  background-color: rgba(1,131,105,.1);
 }

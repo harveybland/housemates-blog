@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { postsData } from "../../lib/api";
-import { PostProps, PostResponseProps } from "../../types/types";
+import { PostProps, PostsResponseProps } from "../../types/types";
 import PostCard from "./components/cards/PostCard";
 import ViewToggleButton from "./components/buttons/ViewToggleButton";
 
@@ -14,9 +14,9 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
 
   async function getPosts() {
-    const response: PostResponseProps[] = await postsData();
+    const response: PostsResponseProps[] = await postsData();
     setPosts(response);
-    setFilteredPosts(response); // Initially set filteredPosts to all posts
+    setFilteredPosts(response); // Set filteredPosts to all posts
     setIsLoading(false);
   }
 
@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Filter posts based on user.name and search term
+    // Filter posts based on user name and search term
     const filtered = posts.filter((post) => {
       const userNameMatches = post.user?.name
         ?.toLowerCase()
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className="page-container relative">
       {isLoading && <div className="loadingBar"></div>}
-      <div className="bg-white p-2 rounded flex justify-between items-center my-4">
+      <div className="bg-white p-2 rounded flex justify-between gap-2 flex-wrap items-center mb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] sticky top-0 z-50">
         <div>
           <input
             type="text"
@@ -75,6 +75,7 @@ export default function Home() {
                   body={post.body}
                   NumbOfComments={post.NumbOfComments}
                   user={post.user}
+                  isGrid={isGrid}
                 />
               </div>
             ))}

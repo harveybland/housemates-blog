@@ -1,6 +1,7 @@
 import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
 import { CommentProps } from "../../../../types/types";
+import UserCard from "@/app/components/cards/UserCard";
 
 export default async function Post({
   params,
@@ -10,66 +11,76 @@ export default async function Post({
   };
 }) {
   // Post data
-  const reponse = await fetch(
+  const postReponse = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
-  const post = await reponse.json();
+  const post = await postReponse.json();
 
   // User data
-  const reponse2 = await fetch(
+  const userResponse = await fetch(
     `https://jsonplaceholder.typicode.com/users/${post.userId}`
   );
-  const user = await reponse2.json();
+  const user = await userResponse.json();
 
   // Comments data
-  const reponse3 = await fetch(
+  const commentsResponse = await fetch(
     `https://jsonplaceholder.typicode.com/comments?postId=${params.id}`
   );
-  const comments = await reponse3.json();
+  const comments = await commentsResponse.json();
 
   return (
     <>
       <div className="page-container">
         <div>
-          {user && (
-            <div>
-              <div key={user.id}>{user.name}</div>
-            </div>
-          )}
-        </div>
-        <div>
-          {post && (
-            <div key={post.id}>
-              <PostCard
-                id={post.id}
-                title={post.title}
-                body={post.body}
-                NumbOfComments={post.NumbOfComments}
-                user={user}
-              />
-            </div>
-          )}
-        </div>
-        <div>
-          {comments && (
-            <div>
-              {comments.map((comment: CommentProps) => (
-                <CommentCard
-                  key={comment.id}
-                  name={comment.name}
-                  body={comment.body}
-                  email={comment.email}
+          <div>
+            {user && (
+              <div key={user.id}>
+                <UserCard
+                  name={user.name}
+                  username={user.username}
+                  email={user.email}
+                  address={user.address}
+                  phone={user.phone}
+                  website={user.website}
+                  company={user.company}
                 />
-              ))}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
+          <div className="pt-5">
+            {post && (
+              <div key={post.id}>
+                <PostCard
+                  id={post.id}
+                  title={post.title}
+                  body={post.body}
+                  NumbOfComments={comments.length}
+                  isGrid={false}
+                />
+              </div>
+            )}
+          </div>
+          <div className="pt-5 mx-5">
+            {comments && (
+              <div className="animate-pop-in">
+                {comments.map((comment: CommentProps) => (
+                  <CommentCard
+                    key={comment.id}
+                    name={comment.name}
+                    body={comment.body}
+                    email={comment.email}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <div className="bg-brand-leaf">
         <div className="page-container">
-          <h1 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-white">
             More posts from {user.name}
-          </h1>
+          </h2>
         </div>
       </div>
     </>
