@@ -39,10 +39,11 @@ export default function Home() {
   return (
     <div className="page-container relative">
       {isLoading && <div className="loadingBar"></div>}
-      <div className="flex justify-between items-center my-4">
+      <div className="bg-white p-2 rounded flex justify-between items-center my-4">
         <div>
           <input
             type="text"
+            className="border border-brand-charcoal rounded p-2 w-72 focus:brand-leaf focus:border-brand-leaf focus:outline-none"
             placeholder="Search Author"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -52,12 +53,12 @@ export default function Home() {
           <ViewToggleButton
             isGrid={isGrid}
             onClick={() => setIsGrid(true)}
-            label="Grid view"
+            label="Grid"
           />
           <ViewToggleButton
             isGrid={!isGrid}
             onClick={() => setIsGrid(false)}
-            label="List view"
+            label="List"
           />
         </div>
       </div>

@@ -39,16 +39,14 @@ export default async function Post({
         </div>
         <div>
           {post && (
-            <div className="animate-pop-in">
-              <div key={post.id}>
-                <PostCard
-                  id={post.id}
-                  title={post.title}
-                  body={post.body}
-                  NumbOfComments={post.NumbOfComments}
-                  user={user}
-                />
-              </div>
+            <div key={post.id}>
+              <PostCard
+                id={post.id}
+                title={post.title}
+                body={post.body}
+                NumbOfComments={post.NumbOfComments}
+                user={user}
+              />
             </div>
           )}
         </div>
