@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PostProps } from "../../../../types/types";
 import Image from "next/image";
 import comment from "../../../../public/images/comment.svg";
-import avatar from "../../../../public/images/profile.png";
+import Avatar from "../avatar";
 
 export default function PostCard({
   id,
@@ -20,11 +20,11 @@ export default function PostCard({
         <div
           className={`flex gap-1 hover:underline ${!user?.name && "hidden"}`}
         >
-          <Image src={avatar} alt="avatar" width={23} height={23} />
+          <Avatar name={user?.name ?? ""} />
           <span>{user?.name}</span>
         </div>
         <div>
-          <h1 className="font-semibold mb-1">{title}</h1>
+          <h2 className="font-semibold mb-1">{title}</h2>
           <p className="text-brand-space blog-text">{body}</p>
         </div>
       </div>
