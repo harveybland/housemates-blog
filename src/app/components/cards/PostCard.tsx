@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { PostProps } from "../../../../types/types";
 import Image from "next/image";
-import comment from "../../../public/images/comment.svg";
-import avatar from "../../../public/images/profile.png";
+import comment from "../../../../public/images/comment.svg";
+import avatar from "../../../../public/images/profile.png";
 
 export default function PostCard({
   id,
