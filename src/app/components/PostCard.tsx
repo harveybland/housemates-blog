@@ -14,7 +14,7 @@ export default function PostCard({
   return (
     <Link
       href={`/post/${id}`}
-      className="flex gap-4 flex-col p-3 rounded min-h-[320px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] "
+      className="flex gap-4 flex-col p-3 rounded min-h-[190px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] "
     >
       <div className="flex items-center gap-1 hover:underline">
         <Image src={avatar} alt="avatar" width={23} height={23} />

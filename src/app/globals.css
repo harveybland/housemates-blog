@@ -28,7 +28,11 @@ body {
   @apply max-w-screen-xl m-auto py-10 px-5;
 }
 
+.button-primary {
+  @apply inline-block px-4 py-2 rounded-sm shadow-md text-white bg-black hover:bg-gray-900;
+}
+
 /* gradient page background */
 .gradient-bg {
-  background: linear-gradient(180deg, rgba(1,131,105,.3) 10%, hsla(0,0%,100%,.4));
+  background: linear-gradient(180deg, rgba(1,131,105,.2) 10%, hsla(0,0%,100%,.4));
 }

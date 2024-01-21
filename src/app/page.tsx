@@ -8,6 +8,7 @@ import PostCard from "./components/PostCard";
 export default function Home() {
   const [posts, setPosts] = useState<PostProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isGrid, setIsGrid] = useState(true);
 
   async function getPosts() {
     const response: PostResponseProps[] = await postsData();
@@ -24,9 +25,29 @@ export default function Home() {
   return (
     <div className="page-container relative">
       {isLoading && <div className="loadingBar"></div>}
+      <div className="my-4">
+        <div className="flex gap-2">
+          <button
+            type="button"
+            className={`button-primary ${isGrid && "!bg-brand-leaf"}`}
+            onClick={() => setIsGrid(true)}
+          >
+            Grid view
+          </button>
+          <button
+            type="button"
+            className={`button-primary ${!isGrid && "!bg-brand-leaf"}`}
+            onClick={() => setIsGrid(false)}
+          >
+            List view
+          </button>
+        </div>
+      </div>
       <div>
         {posts.length > 0 && (
-          <div className="blog-cards animate-pop-in">
+          <div
+            className={`blog-cards animate-pop-in ${!isGrid && "!grid-cols-1"}`}
+          >
             {posts.map((post: PostProps) => (
               <div key={post.id}>
                 <PostCard
