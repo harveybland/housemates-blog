@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { postsData } from "../../lib/api";
 import { PostProps, PostResponseProps } from "../../types/types";
-import PostCard from "./components/PostCard";
+import PostCard from "./components/cards/PostCard";
 import ViewToggleButton from "./components/buttons/ViewToggleButton";
 
 export default function Home() {

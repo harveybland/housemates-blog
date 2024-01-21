@@ -1,4 +1,4 @@
-import { CommentProps } from "../../../types/types";
+import { CommentProps } from "../../../../types/types";
 
 export default function CommentCard({ name, body, email }: CommentProps) {
   return (

@@ -1,5 +1,5 @@
-import CommentCard from "@/app/components/CommentCard";
-import PostCard from "@/app/components/PostCard";
+import CommentCard from "@/app/components/cards/CommentCard";
+import PostCard from "@/app/components/cards/PostCard";
 import { CommentProps } from "../../../../types/types";
 
 export default async function Post({
