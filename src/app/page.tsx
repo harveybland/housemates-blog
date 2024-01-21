@@ -16,7 +16,7 @@ export default function Home() {
   async function getPosts() {
     const response: PostResponseProps[] = await postsData();
     setPosts(response);
-    setFilteredPosts(response); // Initially set filteredPosts to all posts
+    setFilteredPosts(response); // Set filteredPosts to all posts
     setIsLoading(false);
   }
 
@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Filter posts based on user.name and search term
+    // Filter posts based on user name and search term
     const filtered = posts.filter((post) => {
       const userNameMatches = post.user?.name
         ?.toLowerCase()
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className="page-container relative">
       {isLoading && <div className="loadingBar"></div>}
-      <div className="bg-white p-2 rounded flex justify-between items-center my-4">
+      <div className="bg-white p-2 rounded flex justify-between items-center my-4 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)]">
         <div>
           <input
             type="text"

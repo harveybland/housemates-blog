@@ -17,7 +17,9 @@ export default function PostCard({
       className="flex gap-4 flex-col justify-between p-3 rounded min-h-[230px] max-h-[200px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] "
     >
       <div className="flex flex-col gap-3">
-        <div className="flex gap-1 hover:underline">
+        <div
+          className={`flex gap-1 hover:underline ${!user?.name && "hidden"}`}
+        >
           <Image src={avatar} alt="avatar" width={23} height={23} />
           <span>{user?.name}</span>
         </div>
