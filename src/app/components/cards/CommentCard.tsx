@@ -1,5 +1,5 @@
 import { CommentProps } from "../../../../types/types";
-import Avatar from "../avatar";
+import Avatar from "../Avatar";
 
 export default function CommentCard({ name, body, email }: CommentProps) {
   return (

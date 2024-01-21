@@ -1,5 +1,5 @@
 import { UserProps } from "../../../../types/types";
-import Avatar from "../avatar";
+import Avatar from "../Avatar";
 
 export default function UserCard({
   name,

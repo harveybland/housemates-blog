@@ -2,7 +2,7 @@ import Link from "next/link";
 import { PostProps } from "../../../../types/types";
 import Image from "next/image";
 import comment from "../../../../public/images/comment.svg";
-import Avatar from "../avatar";
+import Avatar from "../Avatar";
 
 export default function PostCard({
   id,
@@ -18,7 +18,9 @@ export default function PostCard({
     >
       <div className="flex flex-col gap-3">
         <div
-          className={`flex gap-1 hover:underline ${!user?.name && "hidden"}`}
+          className={`flex gap-2 items-center hover:underline ${
+            !user?.name && "hidden"
+          }`}
         >
           <Avatar name={user?.name ?? ""} />
           <span>{user?.name}</span>
