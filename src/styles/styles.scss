@@ -41,14 +41,20 @@
 .blog-cards {
     display: grid;
     gap: 1.5rem;
+    .blog-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .blog-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
 }
 
-.blog-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-}
     
 /* Screen larger than 600px 2 column */
 @media (min-width: 600px) {

@@ -60,9 +60,10 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="pt-5 mx-5">
+          <div className="bg-white p-5">
+            <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
             {comments && (
-              <div className="animate-pop-in">
+              <div>
                 {comments.map((comment: CommentProps) => (
                   <CommentCard
                     key={comment.id}
