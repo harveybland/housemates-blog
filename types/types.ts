@@ -1,13 +1,15 @@
 import { MouseEventHandler } from "react"
 
-// Post API Response interface
-export interface PostResponseProps {
+// Posts API Response interface
+export interface PostsResponseProps {
     id: number,
     userId: number,
     title: string,
     body: string
     NumbOfComments: number,
-    user: UserProps
+    user: UserProps,
+    // todo: remove
+    isGrid: boolean
 }
 
 // Post component interface
@@ -16,7 +18,8 @@ export interface PostProps {
     title: string,
     body: string,
     NumbOfComments: number,
-    user?: UserProps
+    user?: UserProps,
+    isGrid: boolean
 }
 
 // User interface
@@ -63,4 +66,4 @@ export interface ViewToggleButtonProps {
     isGrid: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
     label: string;
-  }
+}

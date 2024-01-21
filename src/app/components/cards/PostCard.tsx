@@ -10,11 +10,14 @@ export default function PostCard({
   body,
   user,
   NumbOfComments,
+  isGrid,
 }: PostProps) {
   return (
     <Link
       href={`/post/${id}`}
-      className="flex gap-4 flex-col justify-between p-3 rounded min-h-[230px] max-h-[200px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] "
+      className={`flex gap-4 flex-col justify-between p-3 rounded min-h-[230px] max-h-[200px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] ${
+        !isGrid && "!min-h-[100px]"
+      } `}
     >
       <div className="flex flex-col gap-3">
         <div

@@ -55,13 +55,14 @@ export default async function Post({
                   title={post.title}
                   body={post.body}
                   NumbOfComments={comments.length}
+                  isGrid={false}
                 />
               </div>
             )}
           </div>
           <div className="pt-5 mx-5">
             {comments && (
-              <div>
+              <div className="animate-pop-in">
                 {comments.map((comment: CommentProps) => (
                   <CommentCard
                     key={comment.id}
