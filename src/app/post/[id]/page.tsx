@@ -60,7 +60,7 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="bg-white p-5">
+          <div className="bg-white py-3 px-5">
             <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
             {comments && (
               <div>
@@ -74,6 +74,13 @@ export default async function Post({
                 ))}
               </div>
             )}
+            <div>
+              <input
+                type="text"
+                className="input-primary"
+                placeholder="Write a comment..."
+              />
+            </div>
           </div>
         </div>
       </div>

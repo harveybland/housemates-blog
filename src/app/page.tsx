@@ -39,17 +39,17 @@ export default function Home() {
   return (
     <div className="page-container relative">
       {isLoading && <div className="loadingBar"></div>}
-      <div className="bg-white p-2 rounded flex justify-between gap-2 flex-wrap items-center mb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] sticky top-0 z-50">
-        <div>
+      <div className="bg-white p-2 rounded flex justify-between gap-2 items-center mb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] sticky top-0 z-50">
+        <div className="w-full">
           <input
             type="text"
-            className="border border-gray-300 rounded p-2 w-72 focus:brand-leaf focus:border-brand-leaf focus:outline-none"
+            className="input-primary"
             placeholder="Search Author"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="flex gap-2">
+        <div className="hidden gap-2 sm:flex">
           <ViewToggleButton
             isGrid={isGrid}
             onClick={() => setIsGrid(true)}
