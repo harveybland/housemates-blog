@@ -2,6 +2,26 @@ import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
 import { CommentProps } from "../../../../types/types";
 import UserCard from "@/app/components/cards/UserCard";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: any): Promise<Metadata> {
+  const id = params.id;
+
+  // fetch data
+  const userResponse = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${id}`
+  );
+  const user = await userResponse.json();
+
+  return {
+    title: `${user.name} Blog Post`,
+    description: `${user.name} Blog Post Description`,
+    // Add other metadata properties as needed
+  };
+}
 
 export default async function Post({
   params,
