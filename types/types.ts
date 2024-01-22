@@ -67,3 +67,12 @@ export interface ViewToggleButtonProps {
     onClick: MouseEventHandler<HTMLButtonElement>;
     label: string;
 }
+
+// Avatar interface
+export interface AvatarProps {
+    name: string;
+    size: number;
+    fontSize: number;
+    color: string;
+    backgroundColor: string;
+}
