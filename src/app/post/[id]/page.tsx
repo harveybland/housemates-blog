@@ -82,7 +82,7 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="bg-white py-3 px-5 rounded-b">
+          <div className="bg-white pt-1 pb-3 px-5 rounded-b">
             <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
             {comments && (
               <div>

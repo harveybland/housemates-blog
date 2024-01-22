@@ -4,7 +4,6 @@ import Avatar from "../Avatar";
 import { Post } from "../../../../types/types";
 
 export default function PostCard({
-  id,
   title,
   body,
   author,

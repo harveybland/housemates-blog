@@ -50,17 +50,25 @@ export interface Comment {
     body: string
 }
 
-// View toggle button interface
+// View toggle button props interface
 export interface ViewToggleButtonProps {
     isGrid: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
     label: string;
 }
 
-// Avatar interface
+// Avatar props interface
 export interface AvatarProps {
     name: string;
     width?: string;
     height?: string;
     fontSize?: string;
 }
+
+// Option bar props interface
+export interface OptionBarProps {
+    searchTerm: string;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+    isGrid: boolean;
+    setIsGrid: React.Dispatch<React.SetStateAction<boolean>>;
+  }

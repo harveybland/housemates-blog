@@ -3,6 +3,7 @@ import "./globals.css";
 import "../styles/styles.scss";
 import { Poppins } from "next/font/google";
 import Header from "./components/Header";
+import { GlobalContextProvider } from "./Context/store";
 
 const poppins = Poppins({
   style: "normal",
@@ -24,10 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <header>
-          <Header />
-        </header>
-        <main className="main-bg">{children}</main>
+        <main className="main-bg">
+          <GlobalContextProvider>
+            <header>
+              <Header />
+            </header>
+            {children}
+          </GlobalContextProvider>
+        </main>
       </body>
     </html>
   );
