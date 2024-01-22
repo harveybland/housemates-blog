@@ -23,7 +23,6 @@ export default function Home() {
 
   useEffect(() => {
     getPosts();
-    console.log(filteredPosts);
   }, []);
 
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function Home() {
         </div>
       </div>
       <div>
-        {filteredPosts.length > 0 && (
+        {filteredPosts.length > 0 ? (
           <div
             className={`blog-cards animate-pop-in ${!isGrid && "!grid-cols-1"}`}
           >
@@ -81,6 +80,10 @@ export default function Home() {
                 />
               </Link>
             ))}
+          </div>
+        ) : (
+          <div className="text-center text-gray-500 pt-5">
+            No posts found with this Author
           </div>
         )}
       </div>
