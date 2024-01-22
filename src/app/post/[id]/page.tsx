@@ -10,7 +10,7 @@ export async function generateMetadata({
 }: any): Promise<Metadata> {
   const id = params.id;
 
-  // fetch data
+  // fetch user data
   const userResponse = await fetch(
     `https://jsonplaceholder.typicode.com/users/${id}`
   );
@@ -19,7 +19,6 @@ export async function generateMetadata({
   return {
     title: `${user.name} Blog Post`,
     description: `${user.name} Blog Post Description`,
-    // Add other metadata properties as needed
   };
 }
 
