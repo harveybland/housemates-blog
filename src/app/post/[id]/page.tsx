@@ -12,7 +12,7 @@ export async function generateMetadata({
 }: any): Promise<Metadata> {
   const id = params.id;
 
-  // fetch user data
+  // fetch author data
   const authorResponse = await fetch(`${URL}/users/${id}`);
   const author = await authorResponse.json();
 
@@ -41,7 +41,7 @@ export default async function Post({
   const commentsResponse = await fetch(`${URL}/comments?postId=${params.id}`);
   const comments: Comment[] = await commentsResponse.json();
 
-  // Filtered posts from user
+  // Filtered posts from author
   const postsReponse = await fetch(`${URL}/posts`);
 
   const posts = await postsReponse.json();

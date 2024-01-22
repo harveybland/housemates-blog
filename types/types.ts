@@ -11,7 +11,7 @@ export interface Post {
     isGrid: boolean
 }
 
-// User interface
+// Author interface
 export interface Author {
     id?: number,
     name: string,

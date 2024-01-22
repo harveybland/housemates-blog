@@ -15,22 +15,24 @@ export default function Home() {
 
   async function getPosts() {
     const response: Post[] = await postsData();
+    console.log(response);
     setPosts(response);
-    setFilteredPosts(response); // Set filteredPosts to all posts
+    setFilteredPosts(response);
     setIsLoading(false);
   }
 
   useEffect(() => {
     getPosts();
+    console.log(filteredPosts);
   }, []);
 
   useEffect(() => {
-    // Filter posts based on user name and search term
-    const filtered: Post[] = posts.filter((post) => {
-      const userNameMatches = post.author?.name
+    // Filter posts based on author name and search term
+    const filtered = posts.filter((post) => {
+      const authorNameMatches = post.author?.name
         ?.toLowerCase()
         .includes(searchTerm.toLowerCase());
-      return userNameMatches;
+      return authorNameMatches;
     });
 
     setFilteredPosts(filtered);

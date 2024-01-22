@@ -9,16 +9,16 @@ export async function GET() {
         const postResp = await fetch(`${url}/posts`);
         const posts: Post[] = await postResp.json();
 
-        // Fetch user and comments for each post and add user and comments length to each post
+        // Fetch author and comments for each post and add author and comments length to each post
         const postsWithData = await Promise.all(
             posts.map(async (post) => {
-                const userResp = await fetch(`${url}/users/${post.userId}`);
-                const user = await userResp.json();
+                const authorResp = await fetch(`${url}/users/${post.userId}`);
+                const author = await authorResp.json();
 
                 const commentsResp = await fetch(`${url}/posts/${post.id}/comments`);
                 const comments = await commentsResp.json();
 
-                return { ...post, user, NumbOfComments: comments.length };
+                return { ...post, author, NumbOfComments: comments.length };
             })
         );
 
