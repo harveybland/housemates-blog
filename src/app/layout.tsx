@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../styles/styles.scss";
 import { Poppins } from "next/font/google";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import { GlobalContextProvider } from "./Context/store";
+import Wrapper from "./components/Wrapper";
 
 const poppins = Poppins({
   style: "normal",
@@ -25,12 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <main className="main-bg">
+        <main>
           <GlobalContextProvider>
-            <header>
-              <Header />
-            </header>
-            {children}
+            <Wrapper>
+              <header>
+                <Header />
+              </header>
+              {children}
+            </Wrapper>
           </GlobalContextProvider>
         </main>
       </body>

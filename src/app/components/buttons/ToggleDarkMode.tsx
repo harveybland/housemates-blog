@@ -1,9 +1,9 @@
 "use client";
 
-import { useGlobalContext } from "../Context/store";
+import { useGlobalContext } from "../../Context/store";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
-export default function DarkMode() {
+export default function ToggleDarkMode() {
   const { data, setDarkMode } = useGlobalContext();
 
   return (
@@ -19,7 +19,7 @@ export default function DarkMode() {
       >
         <div className="bg-brand-leaf p-2 rounded-full">
           {data.darkMode ? (
-            <MdDarkMode size={25} />
+            <MdDarkMode color="#fff" size={25} />
           ) : (
             <MdOutlineDarkMode color="#fff" size={25} />
           )}

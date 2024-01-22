@@ -4,10 +4,10 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
 import { IoBusinessOutline } from "react-icons/io5";
+import ThemeWrapper from "../ThemeWrapper";
 
 export default function AuthorCard({
   name,
-  username,
   email,
   address,
   phone,
@@ -15,7 +15,7 @@ export default function AuthorCard({
   company,
 }: Author) {
   return (
-    <div className="bg-white p-3 rounded">
+    <ThemeWrapper className="bg-white p-3 rounded">
       <div className="flex gap-3 items-center border-b pb-3 mb-2">
         <div>
           <Avatar name={name} />
@@ -25,7 +25,6 @@ export default function AuthorCard({
             <h1 className="font-semibold">{name}</h1>
             <p>{website}</p>
           </div>
-          {/* <p className="bg-brand-leaf p-1 rounded-md">{username}</p> */}
         </div>
       </div>
       <div className="flex flex-col gap-1">
@@ -53,6 +52,6 @@ export default function AuthorCard({
           <p>{company?.catchPhrase}</p>
         </div>
       </div>
-    </div>
+    </ThemeWrapper>
   );
 }

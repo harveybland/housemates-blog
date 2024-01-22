@@ -5,6 +5,7 @@ import AuthorCard from "@/app/components/cards/AuthorCard";
 import { Metadata } from "next";
 import Link from "next/link";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import ThemeWrapper from "@/app/components/ThemeWrapper";
 
 const URL = "https://jsonplaceholder.typicode.com";
 
@@ -52,7 +53,7 @@ export default async function Post({
     .filter((p: any) => p.userId === post.userId);
 
   return (
-    <>
+    <div className="main-bg">
       <div className="page-container">
         <div>
           <div>
@@ -60,7 +61,6 @@ export default async function Post({
               <div key={author.id}>
                 <AuthorCard
                   name={author.name}
-                  username={author.username}
                   email={author.email}
                   address={author.address}
                   phone={author.phone}
@@ -78,12 +78,12 @@ export default async function Post({
                   title={post.title}
                   body={post.body}
                   NumbOfComments={comments.length}
-                  isGrid={false}
+                  isGrid={true}
                 />
               </div>
             )}
           </div>
-          <div className="bg-white pt-1 pb-3 px-5 rounded-b">
+          <ThemeWrapper className="bg-white pt-1 pb-3 px-5 rounded-b">
             <div className="flex gap-1 items-center">
               <h3 className="font-semibold text-lg">Most relevant </h3>
               <MdOutlineKeyboardArrowDown size={25} />
@@ -100,7 +100,7 @@ export default async function Post({
                 ))}
               </div>
             )}
-          </div>
+          </ThemeWrapper>
         </div>
       </div>
       <div className="bg-brand-leaf">
@@ -126,6 +126,6 @@ export default async function Post({
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

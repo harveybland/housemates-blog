@@ -15,7 +15,6 @@ export interface Post {
 export interface Author {
     id?: number,
     name: string,
-    username?: string,
     email?: string,
     address?: Address
     phone?: string,

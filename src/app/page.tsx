@@ -5,7 +5,6 @@ import { postsData } from "../../lib/api";
 import { Post } from "../../types/types";
 import PostCard from "./components/cards/PostCard";
 import Link from "next/link";
-import { useGlobalContext } from "./Context/store";
 import AuthorSearchComponent from "./components/OptionBar";
 
 export default function Home() {
@@ -14,8 +13,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isGrid, setIsGrid] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const { data, setDarkMode } = useGlobalContext();
 
   async function getPosts() {
     const response: Post[] = await postsData();
@@ -26,7 +23,6 @@ export default function Home() {
 
   useEffect(() => {
     getPosts();
-    console.log(data);
   }, []);
 
   useEffect(() => {
@@ -43,13 +39,7 @@ export default function Home() {
 
   return (
     <div className="page-container relative">
-      <div
-        style={{
-          // update mode between dark and light
-          backgroundColor: data.darkMode ? "#000000" : "#ffffff",
-          color: data.darkMode ? "#ffffff" : "#000000",
-        }}
-      >
+      <div>
         <h1 className="text-5xl font-bold mb-5">Blogs</h1>
       </div>
       {isLoading && <div className="loading-bar"></div>}
