@@ -66,4 +66,4 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 ## Acknowledgments
 
-- https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb for testing with Vitest and react testing library
+- How to use Vitest with react-testing library https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb
