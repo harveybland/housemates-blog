@@ -1,15 +1,17 @@
 import { NextResponse } from "next/server";
+import { Post } from "../../../../types/types";
+
 
 const url = 'https://jsonplaceholder.typicode.com';
 
 export async function GET() {
     try {
         const postResp = await fetch(`${url}/posts`);
-        const posts = await postResp.json();
+        const posts: Post[] = await postResp.json();
 
         // Fetch user and comments for each post and add user and comments length to each post
         const postsWithData = await Promise.all(
-            posts.map(async (post: any) => {
+            posts.map(async (post) => {
                 const userResp = await fetch(`${url}/users/${post.userId}`);
                 const user = await userResp.json();
 

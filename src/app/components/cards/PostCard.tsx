@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { PostProps } from "../../../../types/types";
 import Image from "next/image";
 import comment from "../../../../public/images/comment.svg";
 import Avatar from "../Avatar";
+import { Post } from "../../../../types/types";
 
 export default function PostCard({
   id,
   title,
   body,
-  user,
+  author,
   NumbOfComments,
   isGrid,
-}: PostProps) {
+}: Post) {
   return (
     <Link
       href={`/post/${id}`}
@@ -21,10 +21,12 @@ export default function PostCard({
     >
       <div className="flex flex-col gap-3">
         <div
-          className={`flex gap-2 items-center group ${!user?.name && "hidden"}`}
+          className={`flex gap-2 items-center group ${
+            !author?.name && "hidden"
+          }`}
         >
-          <Avatar name={user?.name ?? ""} />
-          <span className="group-hover:underline">{user?.name}</span>
+          <Avatar name={author?.name ?? ""} />
+          <span className="group-hover:underline">{author?.name}</span>
         </div>
         <div>
           <h2 className="font-semibold mb-1 blog-title">{title}</h2>

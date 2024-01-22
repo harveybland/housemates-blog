@@ -1,41 +1,30 @@
 import { MouseEventHandler } from "react"
 
 // Posts API Response interface
-export interface PostsResponseProps {
+export interface Post {
     id: number,
-    userId: number,
+    userId?: number,
     title: string,
     body: string
+    author?: Author,
     NumbOfComments: number,
-    user: UserProps,
-    // todo: remove
-    isGrid: boolean
-}
-
-// Post component interface
-export interface PostProps {
-    id: number,
-    title: string,
-    body: string,
-    NumbOfComments: number,
-    user?: UserProps,
     isGrid: boolean
 }
 
 // User interface
-export interface UserProps {
+export interface Author {
     id?: number,
     name: string,
     username?: string,
     email?: string,
-    address?: AddressProps
+    address?: Address
     phone?: string,
     website?: string,
-    company?: CompanyProps
+    company?: Company
 }
 
 // Address interface
-export interface AddressProps {
+export interface Address {
     street: string,
     suite: string,
     city: string,
@@ -47,14 +36,14 @@ export interface AddressProps {
 }
 
 // Company interface
-export interface CompanyProps {
+export interface Company {
     name: string,
     catchPhrase: string,
     bs: string
 }   
 
 // Comment interface
-export interface CommentProps {
+export interface Comment {
     id?: number,
     name: string,
     email: string,
@@ -71,8 +60,7 @@ export interface ViewToggleButtonProps {
 // Avatar interface
 export interface AvatarProps {
     name: string;
-    size: number;
-    fontSize: number;
-    color: string;
-    backgroundColor: string;
+    width?: string;
+    height?: string;
+    fontSize?: number;
 }

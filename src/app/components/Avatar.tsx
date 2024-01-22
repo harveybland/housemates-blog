@@ -1,14 +1,6 @@
-export default function Avatar({
-  name,
-  width,
-  height,
-  fontSize,
-}: {
-  name: string;
-  width?: string;
-  height?: string;
-  fontSize?: string;
-}) {
+import { AvatarProps } from "../../../types/types";
+
+export default function Avatar({ name, width, height, fontSize }: AvatarProps) {
   return (
     <div className="relative inline-block">
       <div

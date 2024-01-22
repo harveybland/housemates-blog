@@ -1,7 +1,7 @@
-import { CommentProps } from "../../../../types/types";
+import { Comment } from "../../../../types/types";
 import Avatar from "../Avatar";
 
-export default function CommentCard({ name, body, email }: CommentProps) {
+export default function CommentCard({ name, body, email }: Comment) {
   return (
     <div className="flex flex-col  bg-white mb-3 py-2 rounded">
       <div className="flex  gap-2">

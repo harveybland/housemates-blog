@@ -6,7 +6,7 @@ interface User {
   name: string;
 }
 
-export default function UserName({ user, id }: { user: User; id: number }) {
+export default function AuthorName({ user, id }: { user: User; id: number }) {
   // If user has a name, display the user information with Tooltip
   if (user?.name) {
     return (

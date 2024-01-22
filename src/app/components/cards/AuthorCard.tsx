@@ -1,7 +1,7 @@
-import { UserProps } from "../../../../types/types";
+import { Author } from "../../../../types/types";
 import Avatar from "../Avatar";
 
-export default function UserCard({
+export default function AuthorCard({
   name,
   username,
   email,
@@ -9,7 +9,7 @@ export default function UserCard({
   phone,
   website,
   company,
-}: UserProps) {
+}: Author) {
   return (
     <div className="bg-white p-3 rounded">
       <div className="flex gap-3 items-center border-b pb-3 mb-2">

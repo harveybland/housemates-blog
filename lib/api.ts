@@ -1,6 +1,6 @@
-import { PostsResponseProps } from "../types/types";
+import { Post } from "../types/types";
 
-export async function postsData(): Promise<PostsResponseProps[]> {
+export async function postsData(): Promise<Post[]> {
   try {
     const response = await fetch('/api/posts');
 
@@ -8,26 +8,10 @@ export async function postsData(): Promise<PostsResponseProps[]> {
       throw new Error(`Error: ${response.status} - ${response.statusText}`);
     }
 
-    const json: PostsResponseProps[] = await response.json();
+    const json: Post[] = await response.json();
     return json;
   } catch (error) {
     console.error('Error fetching data:', error);
-    throw error; //
-  }
-}
-
-export async function postSingleData(): Promise<any> {
-  try {
-    const response = await fetch(`/api/post`);
-
-    if (!response.ok) {
-      throw new Error(`Error: ${response.status} - ${response.statusText}`);
-    }
-
-    const json: PostsResponseProps = await response.json();
-    return json;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    throw error; //
+    throw error; 
   }
 }
