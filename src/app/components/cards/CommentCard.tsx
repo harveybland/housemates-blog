@@ -3,15 +3,24 @@ import Avatar from "../Avatar";
 
 export default function CommentCard({ name, body, email }: CommentProps) {
   return (
-    <div className="bg-white flex gap-1 flex-col mb-3 p-3 rounded">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-col  bg-white mb-2 py-2 rounded">
+      <div className="flex  gap-2">
         <Avatar name={name} />
-        <div className="flex flex-wrap justify-between w-full">
-          <h2 className="font-semibold">{name}</h2>
-          <p>{email}</p>
+        <div className="flex-1">
+          <div className="bg-gray-200 p-15 rounded-2xl px-3 py-2">
+            <div className="flex flex-wrap justify-between w-full">
+              <h2 className="font-semibold">{name}</h2>
+              <p className="text-sm underline">{email}</p>
+            </div>
+            <p className="font-light">{body}</p>
+          </div>
+          <div className="flex gap-4 mt-1 ml-1 text-sm">
+            <p>2 d</p>
+            <p className="pointer-cursor text-brand-space">Like</p>
+            <p className="pointer-cursor text-brand-space">Reply</p>
+          </div>
         </div>
       </div>
-      <p>{body}</p>
     </div>
   );
 }
