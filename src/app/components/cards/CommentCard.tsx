@@ -6,8 +6,8 @@ export default function CommentCard({ name, body, email }: CommentProps) {
     <div className="flex flex-col  bg-white mb-2 py-2 rounded">
       <div className="flex  gap-2">
         <Avatar name={name} />
-        <div>
-          <div className="bg-gray-200 p-15 rounded-2xl px-5 py-2 w-full">
+        <div className="flex-1">
+          <div className="bg-gray-200 p-15 rounded-2xl px-3 py-2">
             <div className="flex flex-wrap justify-between w-full">
               <h2 className="font-semibold">{name}</h2>
               <p className="text-sm underline">{email}</p>
@@ -16,8 +16,8 @@ export default function CommentCard({ name, body, email }: CommentProps) {
           </div>
           <div className="flex gap-4 mt-1 ml-1 text-sm">
             <p>2 d</p>
-            <p>Like</p>
-            <p>Reply</p>
+            <p className="pointer-cursor text-brand-space">Like</p>
+            <p className="pointer-cursor text-brand-space">Reply</p>
           </div>
         </div>
       </div>
