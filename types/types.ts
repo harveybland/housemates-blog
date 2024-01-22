@@ -62,5 +62,5 @@ export interface AvatarProps {
     name: string;
     width?: string;
     height?: string;
-    fontSize?: number;
+    fontSize?: string;
 }

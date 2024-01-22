@@ -16,7 +16,6 @@ export default function Home() {
 
   async function getPosts() {
     const response: Post[] = await postsData();
-    console.log(response);
     setPosts(response);
     setFilteredPosts(response);
     setIsLoading(false);
