@@ -16,10 +16,12 @@ export default function UserCard({
         <div>
           <Avatar name={name} />
         </div>
-        <div className="flex flex-col">
-          <h2 className="font-semibold">{name}</h2>
-          {/* <p>{username}</p> */}
-          <p>{website}</p>
+        <div className="flex justify-between flex-1">
+          <div className="flex flex-col">
+            <h2 className="font-semibold">{name}</h2>
+            <p>{website}</p>
+          </div>
+          {/* <p className="bg-brand-leaf p-1 rounded-md">{username}</p> */}
         </div>
       </div>
       <div className="flex flex-col gap-1">

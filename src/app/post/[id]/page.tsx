@@ -1,6 +1,6 @@
 import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
-import { CommentProps } from "../../../../types/types";
+import { CommentProps, PostProps } from "../../../../types/types";
 import UserCard from "@/app/components/cards/UserCard";
 import { Metadata } from "next";
 
@@ -34,6 +34,16 @@ export default async function Post({
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
   const post = await postReponse.json();
+
+  // Posts by user
+  const postsReponse = await fetch(
+    `https://jsonplaceholder.typicode.com/posts`
+  );
+
+  const posts = await postsReponse.json();
+  const filterPosts = posts
+    .slice(0, 3)
+    .filter((p: any) => p.userId === post.userId);
 
   // User data
   const userResponse = await fetch(
@@ -79,7 +89,7 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="bg-white py-3 px-5">
+          <div className="bg-white pt-3 pb-4 px-5">
             <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
             {comments && (
               <div>
@@ -105,9 +115,25 @@ export default async function Post({
       </div>
       <div className="bg-brand-leaf">
         <div className="page-container">
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl mb-4 font-semibold text-white">
             More posts from {user.name}
           </h2>
+          {filterPosts.length > 0 && (
+            <div className={`blog-cards`}>
+              {filterPosts.map((post: PostProps) => (
+                <div key={post.id}>
+                  <PostCard
+                    id={post.id}
+                    title={post.title}
+                    body={post.body}
+                    NumbOfComments={post.NumbOfComments}
+                    user={user}
+                    isGrid={true}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>
