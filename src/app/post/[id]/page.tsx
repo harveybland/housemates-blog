@@ -1,8 +1,13 @@
 import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
-import { CommentProps, PostProps } from "../../../../types/types";
-import UserCard from "@/app/components/cards/UserCard";
+import { Comment as Comment, Post, Author } from "../../../../types/types";
+import AuthorCard from "@/app/components/cards/AuthorCard";
 import { Metadata } from "next";
+import Link from "next/link";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import ThemeWrapper from "@/app/components/ThemeWrapper";
+
+const URL = "https://jsonplaceholder.typicode.com";
 
 export async function generateMetadata({
   params,
@@ -10,15 +15,13 @@ export async function generateMetadata({
 }: any): Promise<Metadata> {
   const id = params.id;
 
-  // fetch user data
-  const userResponse = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${id}`
-  );
-  const user = await userResponse.json();
+  // fetch author data
+  const authorResponse = await fetch(`${URL}/users/${id}`);
+  const author = await authorResponse.json();
 
   return {
-    title: `${user.name} Blog Post`,
-    description: `${user.name} Blog Post Description`,
+    title: `${author.name} Blog Post`,
+    description: `${author.name} Blog Post Description`,
   };
 }
 
@@ -29,49 +32,40 @@ export default async function Post({
     id: string;
   };
 }) {
-  // Post data
-  const postReponse = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
-  );
-  const post = await postReponse.json();
+  // Blog post
+  const postReponse = await fetch(`${URL}/posts/${params.id}`);
+  const post: Post = await postReponse.json();
 
-  // Posts by user
-  const postsReponse = await fetch(
-    `https://jsonplaceholder.typicode.com/posts`
-  );
+  // Author data
+  const authorResponse = await fetch(`${URL}/users/${post.userId}`);
+  const author: Author = await authorResponse.json();
+
+  // Blog post comments
+  const commentsResponse = await fetch(`${URL}/comments?postId=${params.id}`);
+  const comments: Comment[] = await commentsResponse.json();
+
+  // Filtered posts from author
+  const postsReponse = await fetch(`${URL}/posts`);
 
   const posts = await postsReponse.json();
-  const filterPosts = posts
+  const filterPosts: Post[] = posts
     .slice(0, 3)
     .filter((p: any) => p.userId === post.userId);
 
-  // User data
-  const userResponse = await fetch(
-    `https://jsonplaceholder.typicode.com/users/${post.userId}`
-  );
-  const user = await userResponse.json();
-
-  // Comments data
-  const commentsResponse = await fetch(
-    `https://jsonplaceholder.typicode.com/comments?postId=${params.id}`
-  );
-  const comments = await commentsResponse.json();
-
   return (
-    <>
+    <div className="main-bg">
       <div className="page-container">
         <div>
           <div>
-            {user && (
-              <div key={user.id}>
-                <UserCard
-                  name={user.name}
-                  username={user.username}
-                  email={user.email}
-                  address={user.address}
-                  phone={user.phone}
-                  website={user.website}
-                  company={user.company}
+            {author && (
+              <div key={author.id}>
+                <AuthorCard
+                  name={author.name}
+                  email={author.email}
+                  address={author.address}
+                  phone={author.phone}
+                  website={author.website}
+                  company={author.company}
                 />
               </div>
             )}
@@ -89,11 +83,14 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="bg-white pt-3 pb-4 px-5">
-            <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
+          <ThemeWrapper className="bg-white pt-1 pb-3 px-5 rounded-b">
+            <div className="flex gap-1 items-center">
+              <h3 className="font-semibold text-lg">Most relevant </h3>
+              <MdOutlineKeyboardArrowDown size={25} />
+            </div>
             {comments && (
               <div>
-                {comments.map((comment: CommentProps) => (
+                {comments.map((comment) => (
                   <CommentCard
                     key={comment.id}
                     name={comment.name}
@@ -103,39 +100,32 @@ export default async function Post({
                 ))}
               </div>
             )}
-            <div>
-              <input
-                type="text"
-                className="input-primary"
-                placeholder="Write a comment..."
-              />
-            </div>
-          </div>
+          </ThemeWrapper>
         </div>
       </div>
       <div className="bg-brand-leaf">
         <div className="page-container">
           <h2 className="text-2xl mb-4 font-semibold text-white">
-            More posts from {user.name}
+            Latest posts from {author.name}
           </h2>
           {filterPosts.length > 0 && (
             <div className={`blog-cards`}>
-              {filterPosts.map((post: PostProps) => (
-                <div key={post.id}>
+              {filterPosts.map((post) => (
+                <Link href={`/post/${post.id}`} key={post.id}>
                   <PostCard
                     id={post.id}
                     title={post.title}
                     body={post.body}
                     NumbOfComments={post.NumbOfComments}
-                    user={user}
+                    author={author}
                     isGrid={true}
                   />
-                </div>
+                </Link>
               ))}
             </div>
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

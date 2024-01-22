@@ -1,5 +1,3 @@
-## Frontend Developer Coding Challenge: React, TypeScript, and Next.js Application
-
 ### Task Overview
 
 Your challenge is to develop a small blog application leveraging React, TypeScript, and Next.js. The application will be built on top of [fake rest api](https://jsonplaceholder.typicode.com/).
@@ -68,3 +66,4 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 - https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb for testing with Vitest and react testing library
 - Tooltip npm https://www.npmjs.com/package/react-tooltip
+- Context API https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l

@@ -1,41 +1,29 @@
 import { MouseEventHandler } from "react"
 
 // Posts API Response interface
-export interface PostsResponseProps {
+export interface Post {
     id: number,
-    userId: number,
+    userId?: number,
     title: string,
     body: string
+    author?: Author,
     NumbOfComments: number,
-    user: UserProps,
-    // todo: remove
     isGrid: boolean
 }
 
-// Post component interface
-export interface PostProps {
-    id: number,
-    title: string,
-    body: string,
-    NumbOfComments: number,
-    user?: UserProps,
-    isGrid: boolean
-}
-
-// User interface
-export interface UserProps {
+// Author interface
+export interface Author {
     id?: number,
     name: string,
-    username?: string,
     email?: string,
-    address?: AddressProps
+    address?: Address
     phone?: string,
     website?: string,
-    company?: CompanyProps
+    company?: Company
 }
 
 // Address interface
-export interface AddressProps {
+export interface Address {
     street: string,
     suite: string,
     city: string,
@@ -47,32 +35,39 @@ export interface AddressProps {
 }
 
 // Company interface
-export interface CompanyProps {
+export interface Company {
     name: string,
     catchPhrase: string,
     bs: string
 }   
 
 // Comment interface
-export interface CommentProps {
+export interface Comment {
     id?: number,
     name: string,
     email: string,
     body: string
 }
 
-// View toggle button interface
+// View toggle button props interface
 export interface ViewToggleButtonProps {
     isGrid: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
-    label: string;
+    icon: React.ReactNode;
 }
 
-// Avatar interface
+// Avatar props interface
 export interface AvatarProps {
     name: string;
-    size: number;
-    fontSize: number;
-    color: string;
-    backgroundColor: string;
+    width?: string;
+    height?: string;
+    fontSize?: string;
 }
+
+// Option bar props interface
+export interface OptionBarProps {
+    searchTerm: string;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+    isGrid: boolean;
+    setIsGrid: React.Dispatch<React.SetStateAction<boolean>>;
+  }
