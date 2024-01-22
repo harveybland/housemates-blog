@@ -1,6 +1,7 @@
 import Image from "next/image";
 import housemates from "../../../public/images/hm_logo.svg";
 import Link from "next/link";
+import React from "react";
 
 export default function Header() {
   return (
