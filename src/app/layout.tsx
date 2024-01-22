@@ -27,7 +27,7 @@ export default function RootLayout({
         <header>
           <Header />
         </header>
-        <main className="gradient-bg">{children}</main>
+        <main className="main-bg">{children}</main>
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import comment from "../../../../public/images/comment.svg";
 import Avatar from "../Avatar";
@@ -13,8 +12,7 @@ export default function PostCard({
   isGrid,
 }: Post) {
   return (
-    <Link
-      href={`/post/${id}`}
+    <div
       className={`flex gap-4 flex-col justify-between p-3 rounded min-h-[250px] max-h-[250px] bg-white shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] ${
         !isGrid && "!min-h-[160px]"
       } `}
@@ -40,6 +38,6 @@ export default function PostCard({
           <span>{NumbOfComments}</span>
         </p>
       </div>
-    </Link>
+    </div>
   );
 }

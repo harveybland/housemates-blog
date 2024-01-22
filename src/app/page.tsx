@@ -5,6 +5,7 @@ import { postsData } from "../../lib/api";
 import { Post } from "../../types/types";
 import PostCard from "./components/cards/PostCard";
 import ViewToggleButton from "./components/buttons/ViewToggleButton";
+import Link from "next/link";
 
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -70,7 +71,7 @@ export default function Home() {
             className={`blog-cards animate-pop-in ${!isGrid && "!grid-cols-1"}`}
           >
             {filteredPosts.map((post) => (
-              <div key={post.id}>
+              <Link href={`/post/${post.id}`} key={post.id}>
                 <PostCard
                   id={post.id}
                   title={post.title}
@@ -79,7 +80,7 @@ export default function Home() {
                   author={post.author}
                   isGrid={isGrid}
                 />
-              </div>
+              </Link>
             ))}
           </div>
         )}

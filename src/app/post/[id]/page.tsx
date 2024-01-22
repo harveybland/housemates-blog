@@ -3,6 +3,7 @@ import PostCard from "@/app/components/cards/PostCard";
 import { Comment as Comment, Post, Author } from "../../../../types/types";
 import AuthorCard from "@/app/components/cards/AuthorCard";
 import { Metadata } from "next";
+import Link from "next/link";
 
 const URL = "https://jsonplaceholder.typicode.com";
 
@@ -81,7 +82,7 @@ export default async function Post({
               </div>
             )}
           </div>
-          <div className="bg-white pt-3 pb-4 px-5">
+          <div className="bg-white pt-3 pb-4 px-5 rounded-b">
             <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
             {comments && (
               <div>
@@ -108,12 +109,12 @@ export default async function Post({
       <div className="bg-brand-leaf">
         <div className="page-container">
           <h2 className="text-2xl mb-4 font-semibold text-white">
-            More posts from {author.name}
+            Latest posts from {author.name}
           </h2>
           {filterPosts.length > 0 && (
             <div className={`blog-cards`}>
               {filterPosts.map((post) => (
-                <div key={post.id}>
+                <Link href={`/post/${post.id}`} key={post.id}>
                   <PostCard
                     id={post.id}
                     title={post.title}
@@ -122,7 +123,7 @@ export default async function Post({
                     author={author}
                     isGrid={true}
                   />
-                </div>
+                </Link>
               ))}
             </div>
           )}
