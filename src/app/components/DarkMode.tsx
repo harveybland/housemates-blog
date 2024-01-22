@@ -21,7 +21,7 @@ export default function DarkMode() {
           {data.darkMode ? (
             <MdDarkMode size={25} />
           ) : (
-            <MdOutlineDarkMode size={25} />
+            <MdOutlineDarkMode color="#fff" size={25} />
           )}
         </div>
       </button>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import comment from "../../../../public/images/comment.svg";
 import Avatar from "../Avatar";
 import { Post } from "../../../../types/types";
+import { FaRegComment } from "react-icons/fa";
 
 export default function PostCard({
   title,
@@ -33,7 +34,7 @@ export default function PostCard({
       <div className="flex gap-4 text-brand-space text-sm border-t border-b border-gray-300 py-2 px-1">
         <p>1 min read</p>
         <p className="flex items-center gap-1">
-          <Image src={comment} alt="comment svg" width={18} height={18} />
+          <FaRegComment size={18} />
           <span>{NumbOfComments}</span>
         </p>
       </div>

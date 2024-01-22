@@ -16,8 +16,8 @@ export default function CommentCard({ name, body, email }: Comment) {
           </div>
           <div className="flex gap-4 mt-1 ml-1 text-sm">
             <p>2 d</p>
-            <p className="pointer-cursor text-brand-space">Like</p>
-            <p className="pointer-cursor text-brand-space">Reply</p>
+            <p className="ursor-pointer text-brand-space">Like</p>
+            <p className="ursor-pointer text-brand-space">Reply</p>
           </div>
         </div>
       </div>

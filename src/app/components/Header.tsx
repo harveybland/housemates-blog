@@ -6,7 +6,7 @@ import DarkMode from "./DarkMode";
 
 export default function Header() {
   return (
-    <div className="flex justify-between items-center w-full px-5 bg-white shadow-[0px_2px_12px_0px_rgba(0,0,0,.1)]">
+    <div className="flex justify-between items-center w-full px-3 sm:px-5 bg-white shadow-[0px_2px_12px_0px_rgba(0,0,0,.1)]">
       <Link href="/" className="flex items-center gap-2 h-20">
         <Image
           src={housemates}

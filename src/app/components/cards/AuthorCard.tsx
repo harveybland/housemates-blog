@@ -1,5 +1,9 @@
 import { Author } from "../../../../types/types";
 import Avatar from "../Avatar";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+import { LuPhone } from "react-icons/lu";
+import { IoBusinessOutline } from "react-icons/io5";
 
 export default function AuthorCard({
   name,
@@ -26,17 +30,25 @@ export default function AuthorCard({
       </div>
       <div className="flex flex-col gap-1">
         <h2 className="font-semibold">Details</h2>
-        <div className="flex gap-1">
-          <p>{address?.suite}</p>
-          <p>{address?.street}</p>
-          <p>{address?.city}</p>
+        <div className="flex gap-2 items-center">
+          <IoLocationOutline size={18} />
+          <p>{address?.suite},</p>
+          <p>{address?.street},</p>
+          <p>{address?.city},</p>
           <p>{address?.zipcode}</p>
         </div>
-        <div className="flex gap-1">
-          <p className="underline">{email}</p>
-          <p>{phone}</p>
+        <div className="flex gap-3">
+          <div className="flex gap-2 items-center">
+            <MdOutlineEmail size={18} />
+            <p className="underline">{email}</p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <LuPhone size={18} />
+            <p>{phone}</p>
+          </div>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-2">
+          <IoBusinessOutline size={18} />
           <p>{company?.name}</p>
           <p>{company?.catchPhrase}</p>
         </div>

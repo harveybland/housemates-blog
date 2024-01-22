@@ -4,6 +4,7 @@ import { Comment as Comment, Post, Author } from "../../../../types/types";
 import AuthorCard from "@/app/components/cards/AuthorCard";
 import { Metadata } from "next";
 import Link from "next/link";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const URL = "https://jsonplaceholder.typicode.com";
 
@@ -83,7 +84,10 @@ export default async function Post({
             )}
           </div>
           <div className="bg-white pt-1 pb-3 px-5 rounded-b">
-            <h3 className="font-semibold mb-2 text-lg">Most relevant </h3>
+            <div className="flex gap-1 items-center">
+              <h3 className="font-semibold text-lg">Most relevant </h3>
+              <MdOutlineKeyboardArrowDown size={25} />
+            </div>
             {comments && (
               <div>
                 {comments.map((comment) => (

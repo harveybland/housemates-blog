@@ -54,7 +54,7 @@ export interface Comment {
 export interface ViewToggleButtonProps {
     isGrid: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
-    label: string;
+    icon: React.ReactNode;
 }
 
 // Avatar props interface

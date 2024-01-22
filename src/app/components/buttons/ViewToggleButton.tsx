@@ -3,7 +3,7 @@ import { ViewToggleButtonProps } from "../../../../types/types";
 export default function ViewToggleButton({
   isGrid,
   onClick,
-  label,
+  icon,
 }: ViewToggleButtonProps) {
   return (
     <button
@@ -11,7 +11,7 @@ export default function ViewToggleButton({
       className={`button-primary ${isGrid && "!bg-brand-leaf"}`}
       onClick={onClick}
     >
-      {label}
+      {icon}
     </button>
   );
 }
