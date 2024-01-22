@@ -16,9 +16,9 @@ export default function Home() {
 
   async function getPosts() {
     const response: Post[] = await postsData();
+    setIsLoading(false);
     setPosts(response);
     setFilteredPosts(response);
-    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -39,7 +39,10 @@ export default function Home() {
 
   return (
     <div className="page-container relative">
-      {isLoading && <div className="loadingBar"></div>}
+      <div>
+        <h1 className="text-5xl font-bold mb-5">Blogs</h1>
+      </div>
+      {isLoading && <div className="loading-bar"></div>}
       <div className="bg-white p-2 rounded flex justify-between gap-2 items-center mb-5 shadow-[0px_0px_20px_0px_rgba(0,0,0,.1)] sticky top-0 z-50">
         <div className="w-full">
           <input

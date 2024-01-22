@@ -18,7 +18,7 @@ export default function AuthorCard({
         </div>
         <div className="flex justify-between flex-1">
           <div className="flex flex-col">
-            <h2 className="font-semibold">{name}</h2>
+            <h1 className="font-semibold">{name}</h1>
             <p>{website}</p>
           </div>
           {/* <p className="bg-brand-leaf p-1 rounded-md">{username}</p> */}
