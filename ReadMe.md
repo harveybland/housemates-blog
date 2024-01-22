@@ -67,3 +67,4 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 ## Acknowledgments
 
 - https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb for testing with Vitest and react testing library
+- Tooltip npm https://www.npmjs.com/package/react-tooltip

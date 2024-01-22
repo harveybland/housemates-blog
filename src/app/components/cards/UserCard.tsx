@@ -31,7 +31,7 @@ export default function UserCard({
           <p>{address?.zipcode}</p>
         </div>
         <div className="flex gap-1">
-          <p>{email}</p>
+          <p className="underline">{email}</p>
           <p>{phone}</p>
         </div>
         <div className="flex gap-1">
