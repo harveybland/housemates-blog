@@ -78,7 +78,7 @@ export default async function Post({
                   title={post.title}
                   body={post.body}
                   NumbOfComments={comments.length}
-                  isGrid={true}
+                  isGrid={false}
                 />
               </div>
             )}

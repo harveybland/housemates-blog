@@ -28,15 +28,20 @@ export default function AuthorCard({
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        <h2 className="font-semibold">Details</h2>
         <div className="flex gap-2 items-center">
           <IoLocationOutline size={18} />
-          <p>{address?.suite},</p>
-          <p>{address?.street},</p>
-          <p>{address?.city},</p>
-          <p>{address?.zipcode}</p>
+          <div className="flex sm:gap-2 gap-0 sm:flex-row flex-col">
+            <div className="flex gap-2">
+              <p>{address?.suite},</p>
+              <p>{address?.street},</p>
+            </div>
+            <div className="flex gap-2">
+              <p>{address?.city},</p>
+              <p>{address?.zipcode}</p>
+            </div>
+          </div>
         </div>
-        <div className="flex gap-3">
+        <div className="flex sm:gap-2 gap-1 sm:flex-row flex-col">
           <div className="flex gap-2 items-center">
             <MdOutlineEmail size={18} />
             <p className="underline">{email}</p>
@@ -48,8 +53,10 @@ export default function AuthorCard({
         </div>
         <div className="flex gap-2">
           <IoBusinessOutline size={18} />
-          <p>{company?.name}</p>
-          <p>{company?.catchPhrase}</p>
+          <div className="flex sm:gap-2 gap-0 sm:flex-row flex-col">
+            <p>{company?.name}</p>
+            <p>{company?.catchPhrase}</p>
+          </div>
         </div>
       </div>
     </ThemeWrapper>

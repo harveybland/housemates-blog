@@ -4,7 +4,7 @@ import { useGlobalContext } from "@/app/Context/store";
 export default function ThemeWrapper({
   children,
   className = "",
-  isGrid = false,
+  isGrid = true,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -14,7 +14,7 @@ export default function ThemeWrapper({
   return (
     <div
       className={`${data.darkMode && "dark-mode"}  ${
-        isGrid && "!min-h-[160px]"
+        !isGrid && "!min-h-[160px]"
       } ${className}`}
     >
       {children}

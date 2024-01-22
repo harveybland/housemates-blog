@@ -68,9 +68,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="text-center text-gray-500 pt-5">
-            No posts found with this Author
-          </div>
+          <div className="text-center text-gray-500 pt-5">No posts found</div>
         )}
       </div>
     </div>
