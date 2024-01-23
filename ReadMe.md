@@ -28,6 +28,10 @@
 - It eliminates the need for prop drilling, allowing components to access state directly without passing it down through multiple layers
 - The Context API provides a simpler and more straightforward solution for state management without the need for additional libraries or boilerplate code.
 
+### Vercel
+
+- Deployed the application to Vercel: https://housemates-blog.vercel.app/
+
 ## Acknowledgments
 
 - A great tutorial on using the Context API for state management: https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
