@@ -4,7 +4,7 @@ import Image from "next/image";
 import housemates from "../../../../public/images/hm_logo.svg";
 import Link from "next/link";
 import React from "react";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "../../Context/store";
 import ThemeWrapper from "../ThemeWrapper";
 import ToggleDarkMode from "../buttons/ToggleDarkMode";
 
@@ -21,7 +21,7 @@ export default function Header() {
           height={49}
           className="w-auto h-12"
           style={{
-            filter: data.darkMode && "invert(100%)",
+            filter: data?.darkMode ? "invert(100%)" : undefined,
           }}
         />
         <span className="header-logo">

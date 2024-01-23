@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import Header from "../header/Header";
+import Header from "../Header";
 
 describe("Header Component", () => {
   it("renders without crashing", () => {

@@ -1,48 +1,3 @@
-### Task Overview
-
-Your challenge is to develop a small blog application leveraging React, TypeScript, and Next.js. The application will be built on top of [fake rest api](https://jsonplaceholder.typicode.com/).
-
-### Requirements
-
-#### 1. Application Setup
-
-- Use **Next.js** for the initial project setup.
-- Ensure the application is fully typed using **TypeScript**.
-
-#### 2. Application Features
-
-- The landing page will have a list of posts
-- user should be able to click on the post and taken to the post detail page.
-- Each post page should list comments and show author info.
-- **State Management:** Demonstrate the use of state management within the application. This can be through React's Context API, Redux, or any other state management library compatible with React.
-
-### 3. User Interface
-
-- The UI should be clean and user-friendly.
-- You are free to use any UI library or design your components from scratch.
-
-### 4. Documentation
-
-- Provide a **README.md** file with:
-  - Instructions on how to run the application locally.
-  - A brief explanation of the application architecture and your choice of state management.
-  - Any other notes or assumptions you made during development.
-
-### 5. Bonus (Optional)
-
-- Implementing unit tests.
-- Adding features like pagination, filtering, or sorting (if applicable).
-- Deploying the application to a cloud service (e.g., Vercel, Netlify).
-
-## Submission
-
-- Fork this repository.
-- Create a new branch for your work.
-- Push your code to your branch.
-- Once complete, submit a pull request to the original repository for review.
-
-######
-
 ## Instructions for Running Locally
 
 - Install dependencies: pnpm install
@@ -56,14 +11,30 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 ### Architecture
 
-- The application follows a [insert architecture pattern] architecture pattern.
-- Components are organized in the src/components directory.
+- The application is built using the Next.js framework with React and TypeScript. The components are organized within the src/components directory, following a component-based architecture pattern. This structure promotes maintainability and scalability as the project grows.
+
+### Testing
+
+- Vitest is used in combination with React Testing Library for unit testing.
+- To test the components: pnpm run test
+
+### Styling
+
 - Styles are managed using Tailwind and SASS
 
-## State Management
+### State Management
+
+- The application uses the Context API for state management for implementing dark mode. The Context API is a lightweight and straightforward solution for managing state within a React application.
+- It eliminates the need for prop drilling, allowing components to access state directly without passing it down through multiple layers
+- The Context API provides a simpler and more straightforward solution for state management without the need for additional libraries or boilerplate code.
 
 ## Acknowledgments
 
-- https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb for testing with Vitest and react testing library
-- Tooltip npm https://www.npmjs.com/package/react-tooltip
-- Context API https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
+- A great tutorial on using the Context API for state management: https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
+- Dark Mode Colour Scheme https://m2.material.io/design/color/dark-theme.html#properties
+
+## Improvements / Added Notes
+
+- Optimize the client-side API
+- Implement pagination
+- Add a user tooltip on the post
