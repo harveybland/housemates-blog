@@ -11,6 +11,7 @@ export async function GET() {
 
         // Fetch author and comments for each post and add author and comments length to each post
         // TODO: Optimize this code to make it faster
+        // e.g We can get author information once per author rather than per post
         const postsWithData = await Promise.all(
             posts.map(async (post) => {
                 const authorResp = await fetch(`${url}/users/${post.userId}`);
@@ -26,8 +27,6 @@ export async function GET() {
         return NextResponse.json( postsWithData , { status: 200 });
     } catch (error) {
         console.error('Error fetching data:', error);
-
-        // You can inspect the error object and provide a more informative response
         const errorMessage = error instanceof Error ? error.message : 'Unknown error';
 
         return NextResponse.json({ error: errorMessage }, { status: 500 });

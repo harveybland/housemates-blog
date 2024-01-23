@@ -1,12 +1,3 @@
-## Submission
-
-- Fork this repository.
-- Create a new branch for your work.
-- Push your code to your branch.
-- Once complete, submit a pull request to the original repository for review.
-
-######
-
 ## Instructions for Running Locally
 
 - Install dependencies: pnpm install
@@ -42,7 +33,7 @@
 - A great tutorial on using the Context API for state management: https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
 - Dark Mode Colour Scheme https://m2.material.io/design/color/dark-theme.html#properties
 
-## Improvements / Added notes
+## Improvements / Added Notes
 
 - Optimize the client-side API
 - Implement pagination
