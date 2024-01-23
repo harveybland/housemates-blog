@@ -116,7 +116,7 @@ export default async function Post({
                     id={post.id}
                     title={post.title}
                     body={post.body}
-                    NumbOfComments={post.NumbOfComments}
+                    NumbOfComments={comments.length}
                     author={author}
                     isGrid={true}
                   />
