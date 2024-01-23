@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalContext } from "@/app/Context/store";
+import { useGlobalContext } from "../context/store";
 
 export default function ThemeWrapper({
   children,
@@ -14,7 +14,7 @@ export default function ThemeWrapper({
 
   return (
     <div
-      className={`${data.darkMode && "dark-mode"}  ${
+      className={`${data?.darkMode && "dark-mode"}  ${
         !isGrid && "!min-h-[160px]"
       } ${className}`}
     >
