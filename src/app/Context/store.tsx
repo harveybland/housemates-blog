@@ -8,14 +8,14 @@ import {
   useState,
 } from "react";
 
-// export interface GlobalContextData {
-//   data: {
-//     darkMode: boolean;
-//   };
-//   setDarkMode: Dispatch<SetStateAction<{ darkMode: boolean }>>;
-// }
+export interface GlobalContextData {
+  data: {
+    darkMode: boolean;
+  };
+  setDarkMode: Dispatch<SetStateAction<{ darkMode: boolean }>>;
+}
 
-const GlobalContext = createContext<any | undefined>(undefined);
+const GlobalContext = createContext<GlobalContextData>({} as GlobalContextData);
 
 export const GlobalContextProvider = ({
   children,

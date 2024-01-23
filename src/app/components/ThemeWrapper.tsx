@@ -11,6 +11,7 @@ export default function ThemeWrapper({
   isGrid?: boolean;
 }) {
   const { data } = useGlobalContext();
+
   return (
     <div
       className={`${data.darkMode && "dark-mode"}  ${

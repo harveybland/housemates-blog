@@ -21,7 +21,7 @@ export default function Header() {
           height={49}
           className="w-auto h-12"
           style={{
-            filter: data.darkMode && "invert(100%)",
+            filter: data.darkMode ? "invert(100%)" : undefined,
           }}
         />
         <span className="header-logo">

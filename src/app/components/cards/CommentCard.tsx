@@ -13,12 +13,12 @@ export default function CommentCard({ name, body, email }: Comment) {
               <h2 className="font-semibold">{name}</h2>
               <p className="text-sm underline">{email}</p>
             </div>
-            <p className="font-light pt-1">{body}</p>
+            <p className="pt-1 text-brand-space">{body}</p>
           </ThemeWrapper>
           <div className="flex gap-4 mt-1 ml-1 text-sm">
             <p>2 d</p>
-            <p className="ursor-pointer text-brand-space">Like</p>
-            <p className="ursor-pointer text-brand-space">Reply</p>
+            <p className="ursor-pointer ">Like</p>
+            <p className="ursor-pointer ">Reply</p>
           </div>
         </div>
       </div>

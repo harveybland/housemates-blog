@@ -2,8 +2,6 @@
 
 Your challenge is to develop a small blog application leveraging React, TypeScript, and Next.js. The application will be built on top of [fake rest api](https://jsonplaceholder.typicode.com/).
 
-### Requirements
-
 #### 1. Application Setup
 
 - Use **Next.js** for the initial project setup.
@@ -58,12 +56,21 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 - The application follows a [insert architecture pattern] architecture pattern.
 - Components are organized in the src/components directory.
+- Vitest with React Testing Library for unit testing.
 - Styles are managed using Tailwind and SASS
+- React icons to
 
 ## State Management
 
+- Comtext API to implement dark mode
+
 ## Acknowledgments
 
-- https://dev.to/pacheco/configure-vitest-with-react-testing-library-5cbb for testing with Vitest and react testing library
-- Tooltip npm https://www.npmjs.com/package/react-tooltip
-- Context API https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
+- How to use Context API to create dark mode https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
+- Dark Mode Colour Scheme https://m2.material.io/design/color/dark-theme.html#properties
+
+## Improvements
+
+- Optimize the client side API
+- Add pagination
+- Add a user tooltip on the post

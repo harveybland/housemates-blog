@@ -10,6 +10,7 @@ export async function GET() {
         const posts: Post[] = await postResp.json();
 
         // Fetch author and comments for each post and add author and comments length to each post
+        // TODO: Optimize this code to make it faster
         const postsWithData = await Promise.all(
             posts.map(async (post) => {
                 const authorResp = await fetch(`${url}/users/${post.userId}`);
