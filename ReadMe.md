@@ -1,13 +1,3 @@
-### Task Overview
-
-Your challenge is to develop a small blog application leveraging React, TypeScript, and Next.js. The application will be built on top of [fake rest api](https://jsonplaceholder.typicode.com/).
-
-### 4. Documentation
-
-- Provide a **README.md** file with:
-  - A brief explanation of the application architecture and your choice of state management.
-  - Any other notes or assumptions you made during development.
-
 ## Submission
 
 - Fork this repository.
@@ -30,7 +20,7 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 ### Architecture
 
-- The application is built using the Next.js framework with React and TypeScript. The components are organized within the src/components directory, adhering to a component-based architecture pattern. This structure promotes maintainability and scalability as the project grows.
+- The application is built using the Next.js framework with React and TypeScript. The components are organized within the src/components directory, following a component-based architecture pattern. This structure promotes maintainability and scalability as the project grows.
 
 ### Testing
 
@@ -41,7 +31,7 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 
 - Styles are managed using Tailwind and SASS
 
-## State Management
+### State Management
 
 - The application uses the Context API for state management for implementing dark mode. The Context API is a lightweight and straightforward solution for managing state within a React application.
 - It eliminates the need for prop drilling, allowing components to access state directly without passing it down through multiple layers
@@ -52,7 +42,7 @@ Your challenge is to develop a small blog application leveraging React, TypeScri
 - A great tutorial on using the Context API for state management: https://dev.to/clickpesa/react-manage-state-using-context-api-with-usestate-or-usereducer-hooks-d5l
 - Dark Mode Colour Scheme https://m2.material.io/design/color/dark-theme.html#properties
 
-## Improvements
+## Improvements / Added notes
 
 - Optimize the client-side API
 - Implement pagination
