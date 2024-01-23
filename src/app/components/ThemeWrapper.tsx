@@ -1,5 +1,5 @@
 "use client";
-import { useGlobalContext } from "../context/store";
+import { useGlobalContext } from "../Context/store";
 
 export default function ThemeWrapper({
   children,

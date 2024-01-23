@@ -4,7 +4,7 @@ import Image from "next/image";
 import housemates from "../../../../public/images/hm_logo.svg";
 import Link from "next/link";
 import React from "react";
-import { useGlobalContext } from "../../context/store";
+import { useGlobalContext } from "../../Context/store";
 import ThemeWrapper from "../ThemeWrapper";
 import ToggleDarkMode from "../buttons/ToggleDarkMode";
 

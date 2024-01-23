@@ -3,7 +3,7 @@ import "./globals.css";
 import "../styles/styles.scss";
 import { Poppins } from "next/font/google";
 import Header from "./components/header/Header";
-import { GlobalContextProvider } from "./context/store";
+import { GlobalContextProvider } from "./Context/store";
 import Wrapper from "./components/Wrapper";
 
 const poppins = Poppins({

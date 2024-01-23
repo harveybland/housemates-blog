@@ -1,6 +1,6 @@
 "use client";
 
-import { useGlobalContext } from "../../context/store";
+import { useGlobalContext } from "../../Context/store";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 
 export default function ToggleDarkMode() {

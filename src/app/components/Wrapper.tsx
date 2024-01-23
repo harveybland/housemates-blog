@@ -1,6 +1,6 @@
 "use client";
 
-import { useGlobalContext } from "../context/store";
+import { useGlobalContext } from "../Context/store";
 
 export default function Wrapper({ children }: { children: React.ReactNode }) {
   const { data } = useGlobalContext();
