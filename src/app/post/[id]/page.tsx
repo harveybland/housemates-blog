@@ -48,9 +48,9 @@ export default async function Post({
   const postsReponse = await fetch(`${URL}/posts`);
 
   const posts = await postsReponse.json();
-  const filterPosts: Post[] = posts
-    .slice(0, 3)
-    .filter((filtered: Post) => filtered.userId === post.userId);
+  const filterPosts: Post[] = posts.filter(
+    (filtered: Post) => filtered.userId === post.userId
+  );
 
   return (
     <div className="main-bg">
@@ -110,7 +110,7 @@ export default async function Post({
           </h2>
           {filterPosts.length > 0 && (
             <div className={`blog-cards`}>
-              {filterPosts.map((post) => (
+              {filterPosts.slice(0, 3).map((post) => (
                 <Link href={`/post/${post.id}`} key={post.id}>
                   <PostCard
                     id={post.id}
