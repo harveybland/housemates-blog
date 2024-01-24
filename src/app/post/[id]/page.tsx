@@ -50,7 +50,7 @@ export default async function Post({
   const posts = await postsReponse.json();
   const filterPosts: Post[] = posts
     .slice(0, 3)
-    .filter((p: any) => p.userId === post.userId);
+    .filter((filtered: Post) => filtered.userId === post.userId);
 
   return (
     <div className="main-bg">
