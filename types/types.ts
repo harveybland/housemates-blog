@@ -71,3 +71,8 @@ export interface OptionBarProps {
     isGrid: boolean;
     setIsGrid: React.Dispatch<React.SetStateAction<boolean>>;
   }
+
+  // MetaData props interface
+  export interface SearchParams {
+    params: { id: string }
+  }

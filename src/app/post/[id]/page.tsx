@@ -1,6 +1,11 @@
 import CommentCard from "@/app/components/cards/CommentCard";
 import PostCard from "@/app/components/cards/PostCard";
-import { Comment as Comment, Post, Author } from "../../../../types/types";
+import {
+  Comment as Comment,
+  Post,
+  Author,
+  SearchParams,
+} from "../../../../types/types";
 import AuthorCard from "@/app/components/cards/AuthorCard";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -11,8 +16,7 @@ const URL = "https://jsonplaceholder.typicode.com";
 
 export async function generateMetadata({
   params,
-  searchParams,
-}: any): Promise<Metadata> {
+}: SearchParams): Promise<Metadata> {
   const id = params.id;
 
   // fetch author data
