@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 
-export interface GlobalContextData {
+interface GlobalContextData {
   data: {
     darkMode: boolean;
   };
